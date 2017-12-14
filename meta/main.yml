@@ -1,0 +1,19 @@
+---
+galaxy_info:
+  description: An Ansible role for installing and configuring a kafka cluster on CentOS servers.
+  company: ScreamingUdder
+  license: BSD
+  min_ansible_version: 1.2
+  platforms:
+  - name: Centos
+    versions:
+    - 7
+  categories:
+  - cloud
+  - kafka
+  - pubsub
+  - queue
+  - messaging
+  - clustering
+  - development
+dependencies: []
