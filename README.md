@@ -1,57 +1,38 @@
-# Kafka CentOS cluster deployment
+Role Name
+=========
 
-Use Ansible playbook to create Kafka cluster on remote machines.
+A brief description of the role goes here.
 
-Originally forked from `git@github.com:lloydmeta/ansible-kafka-cluster.git`.
+Requirements
+------------
 
-## Usage
+Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
 
-### 1. Install the dependencies on your machine
+Role Variables
+--------------
 
-For Mac, this can be done with Homebrew:
-```
-brew install ansible
-```
+A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
 
-For Ubuntu, use apt:
-```
-sudo apt-get install ansible
-```
+Dependencies
+------------
 
-Make sure you are running Ansible v2.1 or higher with `ansible --version`.
-[Ansible documentation](http://docs.ansible.com/intro_installation.html).
+A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
 
-### 2. Clone this repository
+Example Playbook
+----------------
 
-```
-git clone git@github.com:ScreamingUdder/ansible-kafka-centos.git
-cd ansible-kafka-centos
-```
+Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
 
-### 3. Build Kafka-Manager
+    - hosts: servers
+      roles:
+         - { role: username.rolename, x: 42 }
 
-If deploying Kafka-Manager, the distributable .zip must be placed in the root directory of the repository.
-Instructions for building the distributable are in [Kafka-Manager's README](https://github.com/yahoo/kafka-manager).
+License
+-------
 
-### 4. Prepare cluster machines
+BSD
 
-Cluster machines should have CentOS installed and sshd running. The playbook expects to have access over ssh to `root`.
+Author Information
+------------------
 
-### 5. Configure host names
-
-If you are deploying to physical machines then put the required host names in `hostname_vars.yml` and `hosts.ini`.
-
-### 6. Change version numbers
-
-If you want different versions of Java, Kafka or Zookeeper then change the variables in the `defaults/main.yml` file for each role. Unfortunately for Java it is also required to get a hash for the download url. You'll have to get this by going to the [Oracle download site](http://www.oracle.com/technetwork/pt/java/javase/downloads/jdk8-downloads-2133151.html) , accepting the license agreement and then copying it from the download link of the appropriate version.
-
-### 7. Run the playbook!
-
-To deploy use:
-```
-ansible-playbook --inventory-file=hosts.ini site.yml
-```
-It can be useful to ignore your ssh known hosts:
-```
-export ANSIBLE_HOST_KEY_CHECKING=False
-```
+An optional section for the role authors to include contact information, or a website (HTML is not allowed).
