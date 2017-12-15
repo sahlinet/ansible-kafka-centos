@@ -1,5 +1,5 @@
 kafka:
-  version: 0.11.0.1
+  version: 0.11.0.2
   scala_version: 2.12
   mirror: http://mirrors.ukfast.co.uk/sites/ftp.apache.org
   data_dir: /data/kafka
@@ -7,12 +7,8 @@ kafka:
 # This does not have to be every Zookeeper host, but the more the better
 #  by default, we assume this is run at the same time as Zookeeper provisioning
 zk_hosts: "{{ groups['zk'] }}" # This does not have to be every Zookeeper host
-zk_client_port: "{{ zk_client_port }}"
-kafka_cluster_info: "{{ kafka_cluster_info }}"
-
-
-
-
+#zk_client_port: "{{ zk_client_port }}"         # commented out because of recursive regression
+#kafka_cluster_info: "{{ kafka_cluster_info }}" # commented out because of recursive regression
 
 # for java
 jdk8_version: '1.8.0_152'
